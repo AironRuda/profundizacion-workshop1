@@ -1,0 +1,116 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://frontendmentor-ecommerce-cart.netlify.app/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
+            "https://frontendmentor-ecommerce-cart.netlify.app/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
+            "https://frontendmentor-ecommerce-cart.netlify.app/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
+            "https://frontendmentor-ecommerce-cart.netlify.app/static/media/image-product-4.9962862ef3eff6d65e5b.jpg"
+                
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"woman",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 2,
+            "company": "SNEAKER COMPANY",
+            "img": [ "https://static.dafiti.com.co/p/tellenzi-0891-3161302-1-product.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-0893-3161302-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-0898-3161302-4-zoom.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-0905-3161302-6-zoom.jpg"    
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"woman",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 3,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/tellenzi-1344-8635112-1-zoom.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-1345-8635112-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-1347-8635112-3-zoom.jpg",
+            "https://static.dafiti.com.co/p/tellenzi-1351-8635112-5-zoom.jpg"
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"woman",
+            "price": "$125.00"
+        },
+        {
+            "id": 4,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/off-shoes-9895-0491302-1-zoom.jpg",
+            "https://static.dafiti.com.co/p/off-shoes-9896-0491302-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/off-shoes-9898-0491302-3-zoom.jpg",
+            "https://static.dafiti.com.co/p/off-shoes-9900-0491302-4-zoom.jpg"   
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"woman",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 5,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/adidas-performance-1948-2596921-1-product.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1950-2596921-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1955-2596921-5-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1953-2596921-4-zoom.jpg"              
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"man",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 6,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/adidas-performance-1180-7204902-1-product.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1182-7204902-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1188-7204902-5-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-1185-7204902-4-zoom.jpg"                
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"man",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 7,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/adidas-performance-1432-4203302-1-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-6013-4203302-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-6015-4203302-3-zoom.jpg",
+            "https://static.dafiti.com.co/p/adidas-performance-6016-4203302-4-zoom.jpg" 
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"man",
+            "amount": 0,
+            "price": "$125.00"
+        },
+        {
+            "id": 8,
+            "company": "SNEAKER COMPANY",
+            "img": ["https://static.dafiti.com.co/p/royal-county-of-berkshire-polo-club-3143-5404091-1-zoom.jpg",
+            "https://static.dafiti.com.co/p/royal-county-of-berkshire-polo-club-3145-5404091-2-zoom.jpg",
+            "https://static.dafiti.com.co/p/royal-county-of-berkshire-polo-club-3147-5404091-3-zoom.jpg",
+            "https://static.dafiti.com.co/p/royal-county-of-berkshire-polo-club-3149-5404091-4-zoom.jpg"
+            ],
+            "product": "Fall Limited Edition Sneakers",
+            "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
+            "gender":"man",
+            "amount": 0,
+            "price": "$125.00"
+        }
+    ]
+}

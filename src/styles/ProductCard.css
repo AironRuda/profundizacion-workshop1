@@ -1,0 +1,38 @@
+.imagesField{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principalImg{
+    width: 120px;
+    position: relative;
+    overflow: hidden;
+}
+.sr-only{
+    color: darkgrey;
+}
+.secondaryImages img{
+    width: 50px;
+    margin: 5px;
+}
+.btn-previousImage{
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    padding: .70em .8em;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    background-color: var(--white-clr);
+}
+.btn-nextImage{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 3;
+    padding: .70em .8em;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    background-color: var(--white-clr);
+}
