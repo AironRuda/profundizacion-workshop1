@@ -2,13 +2,17 @@ import CardComponent from "./CardComponent";
 import "../styles/products.scss";
 import { useEffect, useState } from "react";
 import { getProducts } from "../functions/request";
+import { useContext } from "react";
+import { context } from "../App";
 
-const Products = ({ filter = null }) => {
+const Products = () => {
   const [productsView, setProductsView] = useState([]);
 
+  const { filter } = useContext(context);
+
   useEffect(() => {
-    getProducts().then((res) => setProductsView(res));
-  }, []);
+    getProducts(filter).then((res) => setProductsView(res));
+  }, [filter]);
 
   return (
     <main className="container-fluid p-1">

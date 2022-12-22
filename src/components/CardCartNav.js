@@ -1,12 +1,21 @@
 import trash from '../assets/trash.svg';
 import '../styles/cart-modal.scss';
+import { useContext } from 'react';
+import { context } from '../App';
 
 const CardCartNav = () => {
-  
+  const { cart, setCart } = useContext(context);
+
   return (
     <article
-      className='cart-modal container'
-      style={{ position: 'absolute', width: '320px', userSelect: 'none' }}
+      className='cart-modal container mt-2'
+      style={{
+        position: 'absolute',
+        width: '320px',
+        userSelect: 'none',
+        zIndex: '3',
+        botton: '20px',
+      }}
     >
       <h3
         className='pb-2 mt-2'
@@ -14,17 +23,39 @@ const CardCartNav = () => {
       >
         Cart
       </h3>
-      <section className='d-flex align-items-center gap-1'>
-        <img
-          className='main-img'
-          src='https://andscape.com/wp-content/uploads/2019/12/edit-good-kid-Art-Print-POSTER-Kendrick-Lamar-good-kid-m-A-A-d-city-Hip-Hop-Album-Cover.jpg'
-          alt='Kendrick'
-        />
-        <span className='price ms-2'>precio</span>
-        <span className='amount'>x cantidad</span>
-        <span className='total me-2'>total</span>
-        <img src={trash} alt='trash icon' style={{ cursor: 'pointer' }} />
-      </section>
+      {cart.map((entry) => {
+        if (entry !== undefined) {
+          return (
+            <section
+              key={entry.id}
+              className='d-flex align-items-center justify-content-center gap-1 py-2'
+            >
+              <img
+                className='main-img'
+                src={entry.img}
+                alt='Product'
+                style={{ width: '60px' }}
+              />
+              <span className='price ms-2'>$ {entry.price} k</span>
+              <span className='amount'>x {entry.amount}</span>
+              <span className='total mx-3'>$ {entry.price * entry.amount}</span>
+              <img
+                onClick={() => {
+                  console.log(cart);
+                  setCart(
+                    cart.map((element) => {
+                      if (entry.id !== element.id) return element;
+                    })
+                  );
+                }}
+                src={trash}
+                alt='trash icon'
+                style={{ cursor: 'pointer', width: '30px' }}
+              />
+            </section>
+          );
+        }
+      })}
     </article>
   );
 };

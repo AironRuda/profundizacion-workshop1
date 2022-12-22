@@ -20,10 +20,11 @@ function App() {
   const [view, setView] = useState("products");
   const [cart, setCart] = useState([]);
   const [idDetail, setIdDetail] = useState(0);
+  const [filter, setFilter] = useState(null)
 
   return (
     <>
-      <context.Provider value={{ setView, cart, setCart, setIdDetail }}>
+      <context.Provider value={{ setView, cart, setCart, setIdDetail, filter, setFilter }}>
         <NavBarComponent />
         {selectView(view, idDetail)}
       </context.Provider>

@@ -17,9 +17,9 @@ function ProductCard({ id }) {
       .then((res) => {
         setProduct(res);
         setPrincipalImg(res.img[0]);
+        setFlag(cart.find((entry) => res.id === entry.id));
       })
       .catch((err) => console.log(err));
-    setFlag(cart.find((entry) => product.id === entry.id));
   }, []);
 
   if (product) {
@@ -27,7 +27,7 @@ function ProductCard({ id }) {
       <div className="card flex-row">
         <div className="imagesField div__card_img">
           <div className="principalImg">
-            <img className="card-img-top img_principal" src={principalImg} />
+            <img className="card-img-top img_principal" src={principalImg} alt='product' />
           </div>
 
           <div className="secondaryImages">
@@ -35,6 +35,7 @@ function ProductCard({ id }) {
               <img
                 className="hover__div_img"
                 src={product.img[0]}
+                alt='product'
                 onClick={() => {
                   setPrincipalImg(product.img[0]);
                 }}
@@ -44,6 +45,7 @@ function ProductCard({ id }) {
               <img
                 className="hover__div_img"
                 src={product.img[1]}
+                alt='product'
                 onClick={() => {
                   setPrincipalImg(product.img[1]);
                 }}
@@ -53,6 +55,7 @@ function ProductCard({ id }) {
               <img
                 className="hover__div_img"
                 src={product.img[2]}
+                alt='product'
                 onClick={() => {
                   setPrincipalImg(product.img[2]);
                 }}
@@ -61,6 +64,7 @@ function ProductCard({ id }) {
             <div className="hover__div">
               <img
                 className="hover__div_img"
+                alt='product'
                 src={product.img[3]}
                 onClick={() => {
                   setPrincipalImg(product.img[3]);
@@ -77,9 +81,7 @@ function ProductCard({ id }) {
             <h4 className='card-title h5 h4-sm'>
               ${product.price} k<span>50%</span>
             </h4>
-
             <h2 className='card-title h5 h4-sm'>$ 250 k</h2>
-
             <div className='buttons'>
               <div
                 className='btn-group'
@@ -105,11 +107,7 @@ function ProductCard({ id }) {
                         );
                       } else {
                         setCart(
-                          cart.map((entry) => {
-                            if (entry !== undefined) {
-                              if (entry.id !== product.id) return entry;
-                            }
-                          })
+                          cart.filter((entry) => entry.id !== product.id )
                         );
                         setFlag(false);
                       }
