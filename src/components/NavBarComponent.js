@@ -10,10 +10,10 @@ function NavBarComponent() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">sneakers</Navbar.Brand>
+        <Navbar.Brand href="">sneakers</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto d-flex justify-content-end align-items-center">
+          <Nav className="me-auto d-flex align-items-center">
             <Nav.Link
               onClick={() => {
                 setView("products");

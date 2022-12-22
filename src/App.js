@@ -2,6 +2,7 @@ import { useState, createContext } from "react";
 import Products from "./components/Products";
 import ProductCard from "./components/ProductCard";
 import NavBarComponent from "./components/NavBarComponent";
+import CartComponent from "./components/Cart";
 
 const selectView = (_view, _id) => {
   switch (_view) {
@@ -9,6 +10,8 @@ const selectView = (_view, _id) => {
       return <Products />;
     case "detail":
       return <ProductCard id={_id} />;
+    case "cart":
+      return <CartComponent />;
     default:
       break;
   }

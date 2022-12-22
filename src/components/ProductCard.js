@@ -1,8 +1,8 @@
 import '../styles/ProductCard.css';
-import GetInfo from './GetInfo.js';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { context } from '../App';
+import { getProducts } from '../functions/request';
 
 function ProductCard({ id }) {
   const [product, setProduct] = useState(null);
@@ -13,7 +13,7 @@ function ProductCard({ id }) {
   const { cart, setCart } = useContext(context);
 
   useEffect(() => {
-    GetInfo(id)
+    getProducts(null, id)
       .then((res) => {
         setProduct(res);
         setPrincipalImg(res.img[0]);
@@ -24,16 +24,20 @@ function ProductCard({ id }) {
 
   if (product) {
     return (
-      <div className="card flex-row">
-        <div className="imagesField div__card_img">
-          <div className="principalImg">
-            <img className="card-img-top img_principal" src={principalImg} alt='product' />
+      <div className='card flex-row'>
+        <div className='imagesField div__card_img'>
+          <div className='principalImg'>
+            <img
+              className='card-img-top img_principal'
+              src={principalImg}
+              alt='product'
+            />
           </div>
 
-          <div className="secondaryImages">
-            <div className="hover__div">
+          <div className='secondaryImages'>
+            <div className='hover__div'>
               <img
-                className="hover__div_img"
+                className='hover__div_img'
                 src={product.img[0]}
                 alt='product'
                 onClick={() => {
@@ -41,9 +45,9 @@ function ProductCard({ id }) {
                 }}
               />
             </div>
-            <div className="hover__div">
+            <div className='hover__div'>
               <img
-                className="hover__div_img"
+                className='hover__div_img'
                 src={product.img[1]}
                 alt='product'
                 onClick={() => {
@@ -51,9 +55,9 @@ function ProductCard({ id }) {
                 }}
               />
             </div>
-            <div className="hover__div">
+            <div className='hover__div'>
               <img
-                className="hover__div_img"
+                className='hover__div_img'
                 src={product.img[2]}
                 alt='product'
                 onClick={() => {
@@ -61,9 +65,9 @@ function ProductCard({ id }) {
                 }}
               />
             </div>
-            <div className="hover__div">
+            <div className='hover__div'>
               <img
-                className="hover__div_img"
+                className='hover__div_img'
                 alt='product'
                 src={product.img[3]}
                 onClick={() => {
@@ -107,7 +111,7 @@ function ProductCard({ id }) {
                         );
                       } else {
                         setCart(
-                          cart.filter((entry) => entry.id !== product.id )
+                          cart.filter((entry) => entry.id !== product.id)
                         );
                         setFlag(false);
                       }
@@ -129,6 +133,7 @@ function ProductCard({ id }) {
                         ...cart,
                         {
                           id: product.id,
+                          product: product.product,
                           img: product.img[0],
                           amount: 1,
                           price: product.price,
@@ -154,7 +159,37 @@ function ProductCard({ id }) {
                   +
                 </button>
               </div>
-              <button type='button' className='btn__addcar'>
+              <button
+                type='button'
+                className='btn__addcar'
+                onClick={() => {
+                  if (!flag) {
+                    setCart([
+                      ...cart,
+                      {
+                        id: product.id,
+                        img: product.img[0],
+                        amount: 1,
+                        price: product.price,
+                      },
+                    ]);
+                    setFlag(true);
+                  } else {
+                    setCart(
+                      cart.map((entry) => {
+                        if (entry !== undefined) {
+                          if (entry.id === product.id) {
+                            entry.amount = entry.amount + 1;
+                          }
+                        }
+                        return entry;
+                      })
+                    );
+                  }
+                  setAmount(amount + 1);
+                  console.log(cart);
+                }}
+              >
                 add to cart
               </button>
             </div>

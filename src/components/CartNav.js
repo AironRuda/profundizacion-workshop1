@@ -28,7 +28,7 @@ const CartNav = () => {
         {showCart ? <CardCartNav/> : <></>}
       </figure>
       <figure className="ms-2">
-        <img src={image} style={{ width: "40px" }} />
+        <img src={image} alt='product' style={{ width: "40px" }} />
       </figure>
     </>
   );

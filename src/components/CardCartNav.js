@@ -2,9 +2,10 @@ import trash from '../assets/trash.svg';
 import '../styles/cart-modal.scss';
 import { useContext } from 'react';
 import { context } from '../App';
+import Button from "react-bootstrap/Button";
 
 const CardCartNav = () => {
-  const { cart, setCart } = useContext(context);
+  const { cart, setCart, setView } = useContext(context);
 
   return (
     <article
@@ -42,20 +43,20 @@ const CardCartNav = () => {
               <img
                 onClick={() => {
                   console.log(cart);
-                  setCart(
-                    cart.map((element) => {
-                      if (entry.id !== element.id) return element;
-                    })
-                  );
+                  setCart(cart.filter((element) => entry.id !== element.id));
                 }}
                 src={trash}
                 alt='trash icon'
                 style={{ cursor: 'pointer', width: '30px' }}
               />
             </section>
+            
           );
         }
       })}
+      <Button className='m-3' onClick={() => {
+        setView('cart')
+      }}>Go to Cart</Button>
     </article>
   );
 };
