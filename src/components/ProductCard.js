@@ -7,43 +7,66 @@ import { context } from "../App";
 function ProductCard({ id }) {
   const [product, setProduct] = useState(null);
   const [amount, setAmount] = useState(0);
-
-  useEffect(() => {
-    GetInfo(id)
-      .then((res) => setProduct(res))
-      .catch((err) => console.log(err));
-  }, []);
+  const [principalImg, setPrincipalImg] = useState();
+  const [flag, setFlag] = useState(false);
 
   const { cart, setCart } = useContext(context);
 
+  useEffect(() => {
+    GetInfo(id)
+      .then((res) => {
+        setProduct(res);
+        setPrincipalImg(res.img[0]);
+      })
+      .catch((err) => console.log(err));
+    setFlag(cart.find((entry) => product.id === entry.id));
+  }, []);
+
   if (product) {
     return (
-      <div className="card flex-row g">
+      <div className="card flex-row">
         <div className="imagesField div__card_img">
           <div className="principalImg">
-            <button type="button" className="btn-previousImage">
-              <span className="sr-only">
-                <h1>L</h1>
-              </span>
-              <span className="icon icon-previous" aria-hidden="true"></span>
-            </button>
-            <button type="button" className="btn-nextImage">
-              <span className="sr-only">
-                <h1>R</h1>
-              </span>
-              <span className="icon icon-next" aria-hidden="true"></span>
-            </button>
-            <img
-              className="card-img-top principalImg"
-              src={product.img[0]}
-              id="principalImg"
-            />
+            <img className="card-img-top img_principal" src={principalImg} />
           </div>
+
           <div className="secondaryImages">
-            <img className="card-img-left " src={product.img[0]} />
-            <img className="card-img-left " src={product.img[1]} />
-            <img className="card-img-left " src={product.img[2]} />
-            <img className="card-img-left " src={product.img[3]} />
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[0]}
+                onClick={() => {
+                  setPrincipalImg(product.img[0]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[1]}
+                onClick={() => {
+                  setPrincipalImg(product.img[1]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[2]}
+                onClick={() => {
+                  setPrincipalImg(product.img[2]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[3]}
+                onClick={() => {
+                  setPrincipalImg(product.img[3]);
+                }}
+              />
+            </div>
           </div>
         </div>
 
@@ -68,10 +91,31 @@ function ProductCard({ id }) {
                   type="button"
                   className="btn__card "
                   onClick={() => {
-                    if (amount != 0) {
+                    if (amount !== 0) {
                       setAmount(amount - 1);
-                    } else if ((amount = 0)) {
+                      if (amount !== 1) {
+                        setCart(
+                          cart.map((entry) => {
+                            if (entry !== undefined) {
+                              if (entry.id === product.id) {
+                                entry.amount = amount;
+                              }
+                              return entry;
+                            }
+                          })
+                        );
+                      } else {
+                        setCart(
+                          cart.map((entry) => {
+                            if (entry !== undefined) {
+                              if (entry.id !== product.id) return entry;
+                            }
+                          })
+                        );
+                        setFlag(false);
+                      }
                     }
+                    console.log(cart);
                   }}
                 >
                   -
@@ -83,29 +127,31 @@ function ProductCard({ id }) {
                   type="button"
                   className="btn__card"
                   onClick={() => {
-                    setAmount(amount + 1);
-                    if (amount > 0) {
-                      let fakeCart = [...cart];
-                      fakeCart.find((entry) => {
-                        if (entry.id == product.id) {
-                          entry.amount = amount;
-                        }
-                      });
-                      setCart(fakeCart);
-                      console.log(cart);
-                    }
-                    if (amount === 0) {
+                    if (!flag) {
                       setCart([
                         ...cart,
                         {
                           id: product.id,
                           img: product.img[0],
-                          amount: amount,
+                          amount: 1,
                           price: product.price,
-                          // total: amount * product.price,
                         },
                       ]);
+                      setFlag(true);
+                    } else {
+                      setCart(
+                        cart.map((entry) => {
+                          if (entry !== undefined) {
+                            if (entry.id === product.id) {
+                              entry.amount = entry.amount + 1;
+                            }
+                          }
+                          return entry;
+                        })
+                      );
                     }
+                    setAmount(amount + 1);
+                    console.log(cart);
                   }}
                 >
                   +
