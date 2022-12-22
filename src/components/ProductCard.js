@@ -7,50 +7,66 @@ import { context } from '../App';
 function ProductCard({ id }) {
   const [product, setProduct] = useState(null);
   const [amount, setAmount] = useState(0);
+  const [principalImg, setPrincipalImg] = useState();
   const [flag, setFlag] = useState(false);
 
   const { cart, setCart } = useContext(context);
 
   useEffect(() => {
     GetInfo(id)
-      .then((res) => setProduct(res))
+      .then((res) => {
+        setProduct(res);
+        setPrincipalImg(res.img[0]);
+      })
       .catch((err) => console.log(err));
     setFlag(cart.find((entry) => product.id === entry.id));
   }, []);
 
   if (product) {
     return (
-      <div className='card flex-row g'>
-        <div className='imagesField div__card_img'>
-          <div className='principalImg'>
-            <img
-              className='card-img-top principalImg'
-              src={product.img[0]}
-              id='principalImg'
-              alt={product}
-            />
+      <div className="card flex-row">
+        <div className="imagesField div__card_img">
+          <div className="principalImg">
+            <img className="card-img-top img_principal" src={principalImg} />
           </div>
-          <div className='secondaryImages'>
-            <img
-              className='card-img-left '
-              src={product.img[0]}
-              alt={product}
-            />
-            <img
-              className='card-img-left '
-              src={product.img[1]}
-              alt={product}
-            />
-            <img
-              className='card-img-left '
-              src={product.img[2]}
-              alt={product}
-            />
-            <img
-              className='card-img-left '
-              src={product.img[3]}
-              alt={product}
-            />
+
+          <div className="secondaryImages">
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[0]}
+                onClick={() => {
+                  setPrincipalImg(product.img[0]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[1]}
+                onClick={() => {
+                  setPrincipalImg(product.img[1]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[2]}
+                onClick={() => {
+                  setPrincipalImg(product.img[2]);
+                }}
+              />
+            </div>
+            <div className="hover__div">
+              <img
+                className="hover__div_img"
+                src={product.img[3]}
+                onClick={() => {
+                  setPrincipalImg(product.img[3]);
+                }}
+              />
+            </div>
           </div>
         </div>
         <div className='card-body'>

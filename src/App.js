@@ -1,7 +1,7 @@
 import { useState, createContext } from "react";
-import CartNav from "./components/CartNav";
 import Products from "./components/Products";
 import ProductCard from "./components/ProductCard";
+import NavBarComponent from "./components/NavBarComponent";
 
 const selectView = (_view, _id) => {
   switch (_view) {
@@ -22,9 +22,12 @@ function App() {
   const [idDetail, setIdDetail] = useState(0);
 
   return (
-    <context.Provider value={{ setView, cart, setCart, setIdDetail }}>
-      {selectView(view, idDetail)}
-    </context.Provider>
+    <>
+      <context.Provider value={{ setView, cart, setCart, setIdDetail }}>
+        <NavBarComponent />
+        {selectView(view, idDetail)}
+      </context.Provider>
+    </>
   );
 }
 
