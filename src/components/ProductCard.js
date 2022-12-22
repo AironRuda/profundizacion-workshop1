@@ -30,13 +30,14 @@ function ProductCard({ id }) {
               className="card-img-top principalImg"
               src={product.img[0]}
               id="principalImg"
+              alt={product}
             />
           </div>
           <div className="secondaryImages">
-            <img className="card-img-left " src={product.img[0]} />
-            <img className="card-img-left " src={product.img[1]} />
-            <img className="card-img-left " src={product.img[2]} />
-            <img className="card-img-left " src={product.img[3]} />
+            <img className="card-img-left " src={product.img[0]} alt={product}/>
+            <img className="card-img-left " src={product.img[1]} alt={product}/>
+            <img className="card-img-left " src={product.img[2]} alt={product}/>
+            <img className="card-img-left " src={product.img[3]} alt={product}/>
           </div>
         </div>
         <div className="card-body">

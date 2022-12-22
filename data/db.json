@@ -13,7 +13,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"woman",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 2,
@@ -27,7 +27,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"woman",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 3,
@@ -40,7 +40,7 @@
             "product": "Fall Limited Edition Sneakers",
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"woman",
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 4,
@@ -54,7 +54,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"woman",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 5,
@@ -68,7 +68,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"man",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 6,
@@ -82,7 +82,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"man",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 7,
@@ -96,7 +96,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"man",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         },
         {
             "id": 8,
@@ -110,7 +110,7 @@
             "description":"These low-profile sneakers are your perfect casual wear companion.  Featuring a durable rubber outer sole,they'll withstand everything the weather can offer",
             "gender":"man",
             "amount": 0,
-            "price": "$125.00"
+            "price": 1220
         }
     ]
 }
