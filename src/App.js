@@ -1,28 +1,29 @@
 import { useState, createContext } from "react";
 import CartNav from "./components/CartNav";
 import Products from "./components/Products";
+import ProductCard from "./components/ProductCard";
 
-const selectView = (_view) => {
-  switch(_view){
-    case 'products': 
-      return <Products />
-    case 'detail':
-      return <CartNav/>
+const selectView = (_view, _id) => {
+  switch (_view) {
+    case "products":
+      return <Products />;
+    case "detail":
+      return <ProductCard id={_id} />;
     default:
       break;
   }
-}
+};
 
 export const context = createContext(null);
 
 function App() {
-  const [view, setView] = useState('products');
-  const [cart, setCart] = useState([])
-  const [idDetail, setIdDetail] = useState(0)
+  const [view, setView] = useState("products");
+  const [cart, setCart] = useState([]);
+  const [idDetail, setIdDetail] = useState(0);
 
   return (
-    <context.Provider value={{setView, cart, setCart, setIdDetail}}>
-      {selectView(view)}
+    <context.Provider value={{ setView, cart, setCart, setIdDetail }}>
+      {selectView(view, idDetail)}
     </context.Provider>
   );
 }

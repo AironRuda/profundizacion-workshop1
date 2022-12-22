@@ -1,10 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+/* font-family: 'Kumbh Sans', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    
+}
+
+
+
+.card__info{
+    background-color: #fefefe;
+    width: 80%;
+    height: 100%;
+    padding: 30px 20px;
+    margin: 30px 50px;
+}
+
+.card__info h3{
+     font-family: 'Kumbh Sans', sans-serif;
+     color: rgb(255, 125, 26);
+     font-weight: bold;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+.card__info h1{
+    font-family: 'Kumbh Sans', sans-serif;
+    margin-top: 30px;
+   
+}
+.card__info p{
+ color: #68707d;
+}
+.card__info span{
+    color: rgb(255, 125, 26);
+    background-color: rgb(255, 237, 224);
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 5px 7px ;
+}
+.card__info h2{
+    text-decoration: line-through;
+    font-size: 15px;
+    color: #68707d;
+    margin-top: 10px;
+}
+
+.btn__card{
+    background-color: rgb(247, 248, 253);
+    color: rgb(255, 125, 26);
+    line-height: 1.2em;
+    width: 40px;
+    height:40px;
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 30px ;
+   
+}
+
+.btn__addcar{
+    background-color: rgb(255, 125, 26);
+    color: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin-left: 50px;
+    box-shadow: 3px 2px  rgb(201, 92, 14);
+}
+
+
+.buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+
+.div__card_img{
+    background-color: #fefefe;
+    width: 570%;
+    margin: 20px 50px;
+    padding: 30px 30px;
+}
+
+
+
 .imagesField{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .principalImg{
-    width: 120px;
+    width: 350px;
+    height: 350px;
     position: relative;
     overflow: hidden;
 }
@@ -12,8 +107,9 @@
     color: darkgrey;
 }
 .secondaryImages img{
-    width: 50px;
-    margin: 5px;
+    width: 73px;
+    height: 80px;
+    margin: 10px;
 }
 .btn-previousImage{
     position: absolute;
