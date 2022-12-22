@@ -20,7 +20,7 @@ const CardComponent = ({ img, product, description, price, id }) => {
             setView("detail");
           }}
         >
-          Go somewhere
+          Go To Detail
         </Button>
       </Card.Body>
     </Card>

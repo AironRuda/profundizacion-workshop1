@@ -2,6 +2,7 @@ import trash from '../assets/trash.svg';
 import '../styles/cart-modal.scss';
 
 const CardCartNav = () => {
+  
   return (
     <article
       className='cart-modal container'
