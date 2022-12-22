@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { context } from "../App";
 
 function NavBarComponent() {
-  const { setView } = useContext(context);
+  const { setView, setFilter } = useContext(context);
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -17,6 +17,7 @@ function NavBarComponent() {
             <Nav.Link
               onClick={() => {
                 setView("products");
+                setFilter(null)
               }}
             >
               Collections
@@ -24,6 +25,7 @@ function NavBarComponent() {
             <Nav.Link
               onClick={() => {
                 setView("products");
+                setFilter('man');
               }}
             >
               Men
@@ -31,6 +33,7 @@ function NavBarComponent() {
             <Nav.Link
               onClick={() => {
                 setView("products");
+                setFilter('woman');
               }}
             >
               Women
