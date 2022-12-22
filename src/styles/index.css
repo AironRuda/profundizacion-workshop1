@@ -1,2 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.btn-primary {
+  background-color: #FF7D1A;
+  border: #FF7D1A solid 1px;
+}
