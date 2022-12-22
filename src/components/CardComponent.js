@@ -5,7 +5,7 @@ import { context } from '../App'
 
 
 const CardComponent = ({ img, product, description, price, id}) => {
-  const {setView} = useContext(context);
+  const {setView, setIdDetail} = useContext(context);
 
   return (
     <Card style={{ width: '18rem', height: '43rem' }}>
@@ -18,7 +18,10 @@ const CardComponent = ({ img, product, description, price, id}) => {
         <Card.Text>
           {price}
         </Card.Text>
-        <Button variant='primary' onClick={() => {setView('detail')}}>Go somewhere</Button>
+        <Button variant='primary' onClick={() => {
+          setIdDetail(id);
+          setView('detail');
+          }}>Go somewhere</Button>
       </Card.Body>
     </Card>
   );

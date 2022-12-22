@@ -4,17 +4,17 @@ import { useEffect, useState } from 'react';
 import { getProducts } from '../functions/request';
 
 const Products = ({ filter = null }) => {
-  const [products, setProducts] = useState([]);
+  const [productsView, setProductsView] = useState([]);
 
   useEffect(() => {
-    getProducts().then((res) => setProducts(res));
+    getProducts().then((res) => setProductsView(res));
   }, []);
 
   return (
     <main className='container-fluid p-1'>
       <h1 className='text-center my-5'>PRODUCTS</h1>
       <section className='d-flex flex-wrap gap-3 justify-content-center my-5'>
-        {products.map((product) => {
+        {productsView.map((product) => {
           return (
             <CardComponent
               key={product.id}
