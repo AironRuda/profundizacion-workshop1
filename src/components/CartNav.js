@@ -8,6 +8,7 @@ const CartNav = () => {
   return (
     <figure>
       <img
+        style={{ cursor: 'pointer' }}
         src={cart}
         alt='cart icon'
         onClick={() => {

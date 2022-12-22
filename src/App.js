@@ -17,9 +17,10 @@ export const context = createContext(null);
 
 function App() {
   const [view, setView] = useState('products');
+  const [cart, setCart] = useState([])
 
   return (
-    <context.Provider value={setView}>
+    <context.Provider value={{setView, cart, setCart}}>
       {selectView(view)}
     </context.Provider>
   );
