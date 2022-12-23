@@ -153,7 +153,7 @@ function ProductCard({ id }) {
                       );
                     }
                     setAmount(amount + 1);
-                    console.log(cart);
+                    
                   }}
                 >
                   +
